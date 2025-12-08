@@ -1,0 +1,47 @@
+.onchange-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.onchange-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.onchange-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+.onchange-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+.onchange-display {
+  margin-top: 25px;
+  font-size: 20px;
+  color: #555;
+}
+.onchange-label {
+  font-weight: 600;
+  margin-right: 10px;
+}
+.onchange-hint {
+  font-size: 14px;
+  color: #888;
+  margin-top: 8px;
+}
+.onchange-input.error {
+  border-color: #ff4d4f;
+}
+.onchange-error-message {
+  color: #ff4d4f;
+  font-size: 14px;
+  margin-top: 5px;
+}

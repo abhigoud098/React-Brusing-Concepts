@@ -1,3 +1,5 @@
+import Counter from "../counter/Counter";
+
 const styles = {
   padding: "10px 20px",
   backgroundColor: "#4CAF50",
@@ -10,7 +12,7 @@ const styles = {
 function Button() {
   return (
     <>
-      <button style={styles}>Click Me</button>
+      <button style={styles} onClick={Counter}>Click Me</button>
     </>
   )
 }

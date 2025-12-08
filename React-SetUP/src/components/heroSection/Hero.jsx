@@ -2,6 +2,9 @@ import "./Hero.css";
 // import Profile from "../profileCard/Profile";
 import Product from "../listOfProduct/Product";
 import Button from "../button/Button";
+import Counter from "../counter/Counter";
+import LikeBtn from "../likeBtn/likeBtn";
+import Onchange from "../onChange/Onchange";
 
 function Hero() {
   // const user = {
@@ -22,14 +25,8 @@ function Hero() {
   return (
     <div className="hero-section">
       {/* <Profile user={user} /> */}
-      <div className="explicit-return-list-of-items-using-map-function">
-        {/* //second way to return list of items using map function it call
-      explicit return */}
-        {tasks.map((task) => {
-          return <Product key={task.id} task={task} />;
-        })}
-      </div>
-      <Button />
+      <LikeBtn />
+      <Onchange />
     </div>
   );
 }
