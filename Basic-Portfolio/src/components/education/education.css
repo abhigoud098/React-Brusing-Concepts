@@ -1,0 +1,59 @@
+.education {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  height: 100vh;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.card {
+  width: 510px;
+  height: 354px;
+  border-radius: 4px;
+  background: #212121;
+  display: flex;
+  gap: 5px;
+  padding: 0.4em;
+}
+
+.card p {
+  height: 91%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.5s;
+  background: #212121;
+  border: 1px solid #ff5a91;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card p:hover {
+  flex: 4;
+}
+
+.detail-div-Container {
+  border: 1px solid red;
+  display: none;
+}
+
+.card p span {
+  min-width: 14em;
+  padding: 0.5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: #ff568e;
+  letter-spacing: 0.1em;
+}
+
+.card p:hover span {
+  transform: rotate(0);
+}
