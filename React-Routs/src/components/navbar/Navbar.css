@@ -1,0 +1,21 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  background: #b8db80;
+}
+
+.logo {
+  color: white;
+}
+
+.links {
+  margin: 20px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
