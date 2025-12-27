@@ -7,6 +7,7 @@ function Home() {
       <div className="hero">
         <h1>Discover Your Style</h1>
         <p>Trendy collections just for you.</p>
+        <br />
         <Link to="./products">Shop Now</Link>
       </div>
     </section>

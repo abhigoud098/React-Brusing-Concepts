@@ -1,30 +1,31 @@
 import "./Cart.css";
 
-function Cart() {
+function Cart({ cartItems }) {
+  let totalAmt = 0;
+  cartItems.forEach((element) => {
+    totalAmt += element.price * element.quantity;
+  });
+
   return (
     <section className="cart">
       <h2>Your Cart</h2>
+
       <div className="cart-container">
-        <div className="cart-items">
-          <div className="cart-item">
-            {/* <img src="https://via.placeholder.com/100" alt="item" /> */}
-            <div>
-              <h4>Sneakers</h4>
-              <p>$49</p>
+        {cartItems.length > 0 ? (
+          cartItems.map((item) => (
+            <div key={item.id}>
+              <h3>{item.name}</h3>
+              <p>Qty: {item.quantity}</p>
+              <p>Price: {item.price}</p>
             </div>
-          </div>
-          <div className="cart-item">
-            {/* <img src="https://via.placeholder.com/100" alt="item" /> */}
-            <div>
-              <h4>T-Shirt</h4>
-              <p>$19</p>
-            </div>
-          </div>
-        </div>
+          ))
+        ) : (
+          <p>Cart is empty</p>
+        )}
 
         <div className="cart-summary">
           <h3>Order Summary</h3>
-          <p>Subtotal: $68</p>
+          <p>Total Amount: ${totalAmt}</p>
           <button>Checkout</button>
         </div>
       </div>

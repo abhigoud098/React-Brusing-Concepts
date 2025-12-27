@@ -3,6 +3,7 @@
 }
 .cart-container {
   display: flex;
+  justify-content: space-between;
   gap: 30px;
   flex-wrap: wrap;
   margin-top: 20px;
@@ -18,7 +19,7 @@
   padding: 10px 0;
 }
 .cart-summary {
-  flex: 1;
+  width: 30%;
   border: 1px solid #eee;
   padding: 20px;
   border-radius: 10px;
