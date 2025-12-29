@@ -5,6 +5,8 @@ import Home from "../src/components/home/Home";
 import Products from "../src/components/products/Products";
 import Cart from "../src/components/cart/Cart";
 import { useState } from "react";
+import Signup from "./components/signup/Signup";
+import Login from "./components/login/Login";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -48,6 +50,14 @@ function App() {
         {
           path: "/cart",
           element: <Cart cartItems={cartItems} />,
+        },
+        {
+          path: "/login",
+          element: <Login/>,
+        },
+        {
+          path: "/signup",
+          element: <Signup />,
         },
       ],
     },

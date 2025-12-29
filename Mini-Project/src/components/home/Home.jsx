@@ -8,7 +8,8 @@ function Home() {
         <h1>Discover Your Style</h1>
         <p>Trendy collections just for you.</p>
         <br />
-        <Link to="./products">Shop Now</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/SignUp">Sign Up</Link>
       </div>
     </section>
   );
