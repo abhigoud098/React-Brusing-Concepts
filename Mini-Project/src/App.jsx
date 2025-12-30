@@ -1,35 +1,29 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Layout from "./Layout";
-import Home from "../src/components/home/Home";
-import Products from "../src/components/products/Products";
-import Cart from "../src/components/cart/Cart";
+import Home from "./components/home/Home";
+import Products from "./components/products/Products";
+import Cart from "./components/cart/Cart";
 import { useState } from "react";
 import Signup from "./components/signup/Signup";
 import Login from "./components/login/Login";
+import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
 
   const productData = (product) => {
     setCartItems((prevCart) => {
-      // Check if the product already exists in cart
       const existingItem = prevCart.find((item) => item.id === product.id);
 
       if (existingItem) {
-        // Update quantity or price if it already exists
-        return prevCart.map(
-          (item) =>
-            item.id === product.id
-              ? {
-                  ...item,
-                  quantity: item.quantity + 1,
-                } // Clicked product edit and add it
-              : item // UnClicked product as it is add it
+        return prevCart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
         );
       } else {
-        // Add new item to cart
-        return [...prevCart, { ...product, quantity: 1,}];
+        return [...prevCart, { ...product, quantity: 1 }];
       }
     });
   };
@@ -39,34 +33,19 @@ function App() {
       path: "/",
       element: <Layout />,
       children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/products",
-          element: <Products productData={productData} />,
-        },
-        {
-          path: "/cart",
-          element: <Cart cartItems={cartItems} />,
-        },
-        {
-          path: "/login",
-          element: <Login/>,
-        },
-        {
-          path: "/signup",
-          element: <Signup />,
-        },
+        { path: "/", element: <Home /> },
+        { path: "/products", element: <Products productData={productData} /> },
+        { path: "/cart", element: <Cart cartItems={cartItems} /> },
+        { path: "/login", element: <Login /> },
+        { path: "/signup", element: <Signup /> },
       ],
     },
   ]);
 
   return (
-    <>
+    <UserContextProvider>
       <RouterProvider router={router} />
-    </>
+    </UserContextProvider>
   );
 }
 

@@ -8,19 +8,22 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [conformPass, setConformPass] = useState("");
 
-  function handleData() {
-    const userInfo = {
-      name: firstName + " " + lastName,
-      email: email,
-      password: password,
-    };
-    const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-    if (existingUsers.length > 0) {
+  function handleData(e) {
+    e.preventDefault();
+
+    if (password === conformPass) {
+      const userInfo = {
+        name: firstName + " " + lastName,
+        email: email,
+        password: password,
+      };
+
+      const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
       existingUsers.push(userInfo);
       localStorage.setItem("users", JSON.stringify(existingUsers));
+      window.location.reload();
     } else {
-      existingUsers.push(userInfo);
-      localStorage.setItem("users", JSON.stringify(existingUsers));
+      alert("Your password and conform password is not match please refill");
     }
   }
   return (
@@ -83,9 +86,6 @@ function Signup() {
         <button className="submit" type="submit">
           Submit
         </button>
-        <p className="signin">
-          Already have an acount ? <a href="#">Signin</a>{" "}
-        </p>
       </form>
     </>
   );
